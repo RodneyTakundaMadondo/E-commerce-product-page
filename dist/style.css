@@ -1,0 +1,14 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+}/*# sourceMappingURL=style.css.map */
