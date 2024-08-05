@@ -8,31 +8,40 @@
   <link rel="stylesheet" href="./dist/style.css">
   <script defer src="https://kit.fontawesome.com/6e32b16951.js" crossorigin="anonymous"></script>
   <title>Frontend Mentor | E-commerce product page</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kumbh+Sans:wght@100..900&display=swap');
+    </style>
 </head>
 <body>
 
   <header class="navigation">
     <div class="navigation__container">
 
-    <div class="navigation__logo-container">
-      <button id="hamburger-menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <img src="./images/logo.svg" alt="sneakers">
-    </div>
+      <div class="navigation__container--logo-links">
 
-    <nav class="hidden">
-      <ul>
-        <li><a href="#">Collections</a></li>
-        <li><a href="#">Men</a></li>
-        <li><a href="#">Women</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+        <div class="navigation__logo-container">
+          <button id="hamburger-menu">
+            <i class="fa-solid fa-bars fa-lg"></i>
+          </button>
+          <div class="logo-container">
+            <img src="./images/logo.svg" alt="sneakers">
+          </div>
+        </div>
+    
+        <nav class="nav-list">
+          <ul>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+      </div>
 
     <div class="cart-account">
-      <button><i class="fa-solid fa-cart-shopping"></i></button>
+      <button><i class="fa-solid fa-cart-shopping fa-xl"></i></button>
       <div class="cart-account__avatar">
         <img src="./images/image-avatar.png" alt="Random Person">
       </div>
@@ -43,29 +52,65 @@
 
 
   <main>
-    <section>
-      <div class="main-container">
+    <section class="main-content">
+      <div class="main-content__container">
           <div class="even-columns">
+
             <div class="product-image">
-              <img src="./images/" alt="">
+              <button class="product-image__previous">
+                <img src="./images/icon-previous.svg" alt="">
+              </button>
+              <button class="product-image__next">
+                <img src="./images/icon-next.svg" alt="">
+              </button>
+              <img src="./images/image-product-1.jpg" alt="">
             </div>
+
             <div class="product-information">
 
+              <h1 class="product-information__heading1">Sneaker Company</h1>
+              <h2 class="product-information__heading2">Fall Limited Edition Sneakers</h2>
+              
+              <p class="product-information__description">
+                These low-profile sneakers are your perfect
+                casual wear companion. Featuring a durable
+                rubber outer sole, they’ll withstand everything
+                the weather can offer.
+              </p>
+              
+              <div class="product-information__pricing">
+                <div class="product-information__pricing--price">
+                 <span class="price"> $125.00</span>
+                  <span class="percent">
+                    50%
+                  </span>
+                </div>
+                
+                <div class="product-information__pricing--previous-price">
+                  $250.00
+                </div>
+              </div>
+
+              <div class="product-information__quantity">
+               <div class="product-information__quantity--buttons">
+                <button class="product-information__quantity--subtract">
+                  <img src="./images/icon-minus.svg" alt="">
+                </button>
+                <div class="product-information__quantity--amount">
+                  0
+                </div>
+                <button class="product-information__quantity--addition">
+                  <img src="./images/icon-plus.svg" alt="">
+                </button>
+               </div>
+                <button class="product-information__quantity--add-to-cart">Add to cart</button>
+              </div>
+            
             </div>
           </div>
       </div>
     </section>
   </main>
-
-
-
-
-
-
-
-
-
-
 
 <!--   
   <div class="attribution">
