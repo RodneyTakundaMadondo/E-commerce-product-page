@@ -25,11 +25,12 @@ button{
 
 body{
     font-family: $ff-primary;
-    overflow-y: auto;
+    margin: 0;
 }
 
 .navigation{
     &__container{
+
         padding-block: 2rem;
         display: flex;
         justify-content: space-between;
@@ -37,14 +38,43 @@ body{
         flex-wrap: wrap;
         width: min(1440px,100% - 2rem);
         margin-inline: auto;
+        position: relative;
+
         &--logo-links{
             display: flex;
            gap: 2rem;
         }
+
        .nav-list{
-        display: none;
+        position: fixed;
+        z-index: 1000;
+        background: $clr-neutral-5;
+        padding-block: 2rem;
+        padding-inline: 2rem;
+        height: 100vh;
+        width: 70%;
+        left: 0;
+        top: 0;
+
+        #close-btn{
+            margin-bottom: 3rem;
+        }
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            li a{
+                text-decoration: none;
+                color: $clr-neutral-6;
+                font-weight: 700;
+                font-size: 1.2rem;
+            }
+        }
+
        }
         .cart-account{
+            position: relative;
             display: flex;
            gap: 1rem;
             align-items: center;
@@ -58,6 +88,70 @@ body{
                 img{
                     display: block;
                     max-width: 100%;
+                }
+            }
+            .cart-content{
+                position:fixed;
+                left: 0;
+                right: 0;
+                top: 7rem;
+                width: min(30rem,100% - 2rem);
+                margin: auto;
+                z-index: 100;
+                background: $clr-neutral-5;
+                min-height: 18rem;
+                max-height: 20rem;
+                border-radius: 10px;
+                
+                &__heading{
+                    font-weight: 700;
+                    padding: 2rem;
+                }
+                &__divider{
+                    height: 1px;
+                    background: $clr-neutral-3;
+                    width: 100%;
+                }
+                &__item{
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    padding: 1rem;
+                    margin-bottom: 2rem;
+                    .product{
+                        height: 3.5rem;
+                        width: 3.5rem;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        img{
+                          width: 100%;
+                          height: 100%;
+                          object-fit: contain;
+                        }
+                    }
+                    .item-description{
+                        p{
+                            line-height: 2;
+                            color: $clr-neutral-2;
+                        }
+                        .item-quantity{
+                            .cart-total{
+                                color: $clr-neutral-6;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+
+                }
+                button[data-name="checkout"]{
+                    width: 90%;
+                    background: $clr-primary-1;
+                    padding: 1rem;
+                    border-radius: 10px;
+                    margin-inline: auto;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    display: block;
                 }
             }
         }
@@ -76,11 +170,23 @@ body{
         &__container{
             .cart-account{
                 width: auto;
+                .cart-content{
+                    left: auto;
+                    right: 5rem;
+                    border: 1px solid red;
+                }
             }
             .nav-list{
                 display: block;
+                padding: 0;
+                position: static;
+                height: auto;
+                #close-btn{
+                    display: none;
+                }
                 ul{
                     display: flex;
+                    flex-direction: row;
                     gap: 1rem;
                     li a{
                         text-decoration: none;
@@ -90,16 +196,19 @@ body{
         }
         &__logo-container{
             width: auto;
+            button{
+                display: none;
+            }
         }
     }
 }
 .main-content{
     &__container{
-        
+        margin-bottom: 2rem;
         .even-columns{
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 2rem;
             .product-image{
                 position: relative;
                 img{
@@ -195,6 +304,7 @@ body{
                         width: 100%;
                         padding: 1.5rem;
                         border-radius: 10px;
+                      
                     }
                 }
                 

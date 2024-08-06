@@ -28,7 +28,10 @@
           </div>
         </div>
     
-        <nav class="nav-list">
+        <nav class="nav-list hidden">
+          <button id="close-btn">
+            <img src="./images/icon-close.svg" alt="">
+          </button>
           <ul>
             <li><a href="#">Collections</a></li>
             <li><a href="#">Men</a></li>
@@ -41,10 +44,45 @@
       </div>
 
     <div class="cart-account">
-      <button><i class="fa-solid fa-cart-shopping fa-xl"></i></button>
+
+      <button id="cart"><i class="fa-solid fa-cart-shopping fa-xl"></i></button>
+
       <div class="cart-account__avatar">
         <img src="./images/image-avatar.png" alt="Random Person">
       </div>
+
+      <div class="cart-content">
+
+        <h1 class="cart-content__heading">Cart</h1>
+        <div class="cart-content__divider"></div>
+
+        <div class="cart-content__item">
+
+          <div class="product">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="">
+          </div>
+          <div class="item-description">
+            <p class="item-name">Fall Limited Edition Sneakers</p>
+            <p class="item-quantity">
+              <span class="cart-price">
+                $125.00
+              </span>
+              <span class="cart-quantity">
+                x3
+              </span>
+              <span class="cart-total">
+                $375.00
+              </span>
+            </p>
+          </div>
+          <button class="delete">
+            <img src="./images/icon-delete.svg" alt="delete">
+          </button>
+
+        </div>
+        <button data-name="checkout">Checkout</button>
+      </div>
+
     </div>
     
     </div>
@@ -93,17 +131,17 @@
 
               <div class="product-information__quantity">
                <div class="product-information__quantity--buttons">
-                <button class="product-information__quantity--subtract">
+                <button id="subtract" class="product-information__quantity--subtract">
                   <img src="./images/icon-minus.svg" alt="">
                 </button>
-                <div class="product-information__quantity--amount">
+                <div id="quantity" class="product-information__quantity--amount">
                   0
                 </div>
-                <button class="product-information__quantity--addition">
+                <button id="add" class="product-information__quantity--addition">
                   <img src="./images/icon-plus.svg" alt="">
                 </button>
                </div>
-                <button class="product-information__quantity--add-to-cart">Add to cart</button>
+                <button id="add-cart" class="product-information__quantity--add-to-cart">Add to cart</button>
               </div>
             
             </div>
@@ -117,5 +155,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Rodney Madondo</a>.
   </div> -->
+  <script src="./index.js"></script>
 </body>
 </html>
