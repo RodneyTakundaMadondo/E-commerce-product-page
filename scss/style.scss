@@ -16,7 +16,7 @@ $ff-primary:"Kumbh Sans", sans-serif;
     margin: 0;
 }
 .hidden{
-    display: none;
+    display: none !important;
 }
 button{
     background:transparent;
@@ -76,10 +76,22 @@ body{
         .cart-account{
             position: relative;
             display: flex;
-           gap: 1rem;
+            gap: 1rem;
             align-items: center;
-            button i{
-                color: $clr-neutral-3;
+            .cart-icon{
+                display: flex;
+                flex-direction: column;
+                .orange{
+                    order: -1;
+                    height: 1.2rem;
+                    width: 1.5rem;
+                    background-color: $clr-primary-1;
+                    margin-left: 1rem;
+                    border-radius: 10px;
+                }
+                button i{
+                    color: $clr-neutral-3;
+                }
             }
             &__avatar{
                 height: 2rem;
@@ -99,10 +111,12 @@ body{
                 margin: auto;
                 z-index: 100;
                 background: $clr-neutral-5;
-                min-height: 18rem;
-                max-height: 20rem;
+                min-height: 22rem;
                 border-radius: 10px;
-                
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding-bottom: 1rem;
                 &__heading{
                     font-weight: 700;
                     padding: 2rem;
@@ -117,7 +131,16 @@ body{
                     justify-content: space-between;
                     flex-wrap: wrap;
                     padding: 1rem;
-                    margin-bottom: 2rem;
+                    margin-bottom: 1rem;
+                    #cart-status{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        min-height: 8rem;
+                        font-weight: 700;
+                        color: $clr-neutral-2;
+                    }
                     .product{
                         height: 3.5rem;
                         width: 3.5rem;

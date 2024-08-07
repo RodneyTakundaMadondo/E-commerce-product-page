@@ -4,11 +4,16 @@ let cartBtn = document.getElementById("cart");
 let plusBtn = document.getElementById("add")
 let subtract = document.getElementById("subtract")
 let addCart = document.getElementById("add-cart");
+let checkoutBtn = document.getElementById("checkout");
 
 
 let navlist = document.querySelector(".nav-list");
 let cartContent = document.querySelector(".cart-content");
 let quantity = document.getElementById("quantity");
+let productName = document.getElementById("product-name");
+let  price = document.getElementById("price");
+let cartItem = document.querySelector(".cart-content__item");
+let cartStatus = document.getElementById("cart-status")
 
 
 hamburgerBtn.addEventListener("click",()=>{
@@ -22,7 +27,7 @@ cartBtn.addEventListener('click',()=>{
 })
 
 plusBtn.addEventListener('click',()=>{
-    quantity.textContent ++
+    quantity.textContent++;
 })
 subtract.addEventListener('click',()=>{
    if(quantity.textContent === "0"){
@@ -31,3 +36,44 @@ subtract.addEventListener('click',()=>{
     quantity.textContent --;
    }
 })
+
+console.log(checkoutBtn)
+$(addCart).click(()=>{
+    
+    if(quantity.textContent >0){
+        checkoutBtn.classList.remove("hidden")
+        cartStatus.classList.add("hidden")
+        let itemInCart =`
+    <div class="product">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="">
+          </div>
+          <div class="item-description">
+            <p class="item-name">${productName.textContent}</p>
+            <p class="item-quantity">
+              <span class="cart-price">
+                ${price.textContent}
+              </span>
+              <span class="cart-quantity">
+                x${quantity.textContent}
+              </span>
+              <span class="cart-total">
+                $${Number(price.textContent) * Number(quantity.textContent)}
+              </span>
+            </p>
+          </div>
+          <button class="delete">
+            <img src="./images/icon-delete.svg" alt="delete">
+          </button>
+
+    `
+
+    cartItem.innerHTML = itemInCart
+    }else{
+        return
+    }
+    
+})
+/*
+when we click the add button we wanna fetch the h1 ,
+the price of the item ,the quantity and calculate the tot price 
+*/

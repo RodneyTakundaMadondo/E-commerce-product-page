@@ -11,6 +11,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kumbh+Sans:wght@100..900&display=swap');
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -45,24 +46,30 @@
 
     <div class="cart-account">
 
+     <div class="cart-icon">
       <button id="cart"><i class="fa-solid fa-cart-shopping fa-xl"></i></button>
+      <div class="orange"></div>
+     </div>
 
       <div class="cart-account__avatar">
         <img src="./images/image-avatar.png" alt="Random Person">
       </div>
 
-      <div class="cart-content">
+      <div class="cart-content hidden">
 
         <h1 class="cart-content__heading">Cart</h1>
         <div class="cart-content__divider"></div>
 
-        <div class="cart-content__item">
-
+        <div class="cart-content__item ">
+          <div id="cart-status" class="isempty ">
+            <p>You cart is empty.</p>
+          </div>
+<!-- 
           <div class="product">
             <img src="./images/image-product-1-thumbnail.jpg" alt="">
           </div>
           <div class="item-description">
-            <p class="item-name">Fall Limited Edition Sneakers</p>
+            <p class="item-name"></p>
             <p class="item-quantity">
               <span class="cart-price">
                 $125.00
@@ -77,10 +84,10 @@
           </div>
           <button class="delete">
             <img src="./images/icon-delete.svg" alt="delete">
-          </button>
+          </button> -->
 
         </div>
-        <button data-name="checkout">Checkout</button>
+        <button class="hidden" id="checkout" data-name="checkout">Checkout</button>
       </div>
 
     </div>
@@ -107,7 +114,7 @@
             <div class="product-information">
 
               <h1 class="product-information__heading1">Sneaker Company</h1>
-              <h2 class="product-information__heading2">Fall Limited Edition Sneakers</h2>
+              <h2 id="product-name" class="product-information__heading2">Fall Limited Edition Sneakers</h2>
               
               <p class="product-information__description">
                 These low-profile sneakers are your perfect
@@ -118,7 +125,7 @@
               
               <div class="product-information__pricing">
                 <div class="product-information__pricing--price">
-                 <span class="price"> $125.00</span>
+                 <span  class="price">$<span id="price">125.00</span></span>
                   <span class="percent">
                     50%
                   </span>
