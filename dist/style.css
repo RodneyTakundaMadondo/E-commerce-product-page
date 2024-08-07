@@ -74,6 +74,8 @@ body {
   background-color: hsl(26, 100%, 55%);
   margin-left: 1rem;
   border-radius: 10px;
+  position: relative;
+  z-index: 100;
 }
 .navigation__container .cart-account .cart-icon button i {
   color: hsl(220, 14%, 75%);
