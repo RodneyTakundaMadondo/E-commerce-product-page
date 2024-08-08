@@ -76,6 +76,11 @@ body {
   border-radius: 10px;
   position: relative;
   z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
 }
 .navigation__container .cart-account .cart-icon button i {
   color: hsl(220, 14%, 75%);
@@ -98,7 +103,7 @@ body {
   margin: auto;
   z-index: 100;
   background: hsl(0, 0%, 100%);
-  min-height: 22rem;
+  min-height: 18rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -145,6 +150,10 @@ body {
 .navigation__container .cart-account .cart-content__item .item-description p {
   line-height: 2;
   color: hsl(219, 9%, 45%);
+}
+.navigation__container .cart-account .cart-content__item .item-description .item-quantity {
+  display: flex;
+  gap: 1rem;
 }
 .navigation__container .cart-account .cart-content__item .item-description .item-quantity .cart-total {
   color: hsl(0, 0%, 0%);
