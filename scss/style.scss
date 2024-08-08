@@ -55,7 +55,7 @@ body{
         width: 70%;
         left: 0;
         top: 0;
-
+        transition: 0.3s ease-in-out !important;
         #close-btn{
             margin-bottom: 3rem;
         }
@@ -344,4 +344,7 @@ body{
 
         }
     }
+}
+@media(min){
+
 }

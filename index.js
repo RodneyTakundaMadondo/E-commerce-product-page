@@ -19,10 +19,20 @@ let cartAmount = document.querySelector(".orange");
 
 hamburgerBtn.addEventListener("click",()=>{
     navlist.classList.remove("hidden");
+    
 })
 closeBtn.addEventListener('click', ()=>{
     navlist.classList.add("hidden")
+    const mediaQuery = window.matchMedia('(min-width:768px)');
+    mediaQuery.addEventListener("change",(e)=>{
+     if(e.matches){
+         navlist.classList.remove("hidden")
+     }else{
+       return
+     }
+    })
 })
+
 cartBtn.addEventListener('click',()=>{
     cartContent.classList.toggle("hidden");
 })
