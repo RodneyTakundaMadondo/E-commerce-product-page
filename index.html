@@ -29,7 +29,7 @@
           </div>
         </div>
     
-        <nav class="nav-list">
+        <nav class="nav-list hidden">
           <button id="close-btn">
             <img src="./images/icon-close.svg" alt="">
           </button>
@@ -65,27 +65,7 @@
           <div id="cart-status" class="isempty ">
             <p>You cart is empty.</p>
           </div>
-<!-- 
-          <div class="product">
-            <img src="./images/image-product-1-thumbnail.jpg" alt="">
-          </div>
-          <div class="item-description">
-            <p class="item-name"></p>
-            <p class="item-quantity">
-              <span class="cart-price">
-                $125.00
-              </span>
-              <span class="cart-quantity">
-                x3
-              </span>
-              <span class="cart-total">
-                $375.00
-              </span>
-            </p>
-          </div>
-          <button class="delete">
-            <img src="./images/icon-delete.svg" alt="delete">
-          </button> -->
+
 
         </div>
         <button class="hidden" id="checkout" data-name="checkout">Checkout</button>
@@ -96,7 +76,16 @@
     </div>
   </header>
 
+  <div class="separator"></div>
 
+  <div class="alt-img-focus">
+    <button class="close-btn">
+      <img src="./images/icon-close.svg" alt="close button">
+    </button>
+    <div class="img-in-focus">
+      <img src="./images/image-product-1.jpg" alt="">
+    </div>
+  </div>
   <main>
     <section class="main-content">
       <div class="main-content__container">
@@ -109,8 +98,28 @@
               <button class="product-image__next">
                 <img src="./images/icon-next.svg" alt="">
               </button>
-              <img src="./images/image-product-1.jpg" alt="">
+              
+              <div class="main-img">
+                <img  src="./images/image-product-1.jpg" alt="">
+              </div>
+
+              <div class="alternate-images">
+                <div class="alt-img">
+                  <img src="./images/image-product-1-thumbnail.jpg" alt="">
+                </div>
+                <div class="alt-img">
+                  <img src="./images/image-product-2-thumbnail.jpg" alt="">
+                </div>
+                <div class="alt-img">
+                  <img src="./images/image-product-3-thumbnail.jpg" alt="">
+                </div>
+                <div class="alt-img">
+                  <img src="./images/image-product-4-thumbnail.jpg" alt="">
+                </div>
+              </div>
+              
             </div>
+
 
             <div class="product-information">
 

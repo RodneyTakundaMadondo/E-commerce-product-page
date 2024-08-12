@@ -14,5 +14,25 @@
   
   
 
-  
+  <!-- 
+          <div class="product">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="">
+          </div>
+          <div class="item-description">
+            <p class="item-name"></p>
+            <p class="item-quantity">
+              <span class="cart-price">
+                $125.00
+              </span>
+              <span class="cart-quantity">
+                x3
+              </span>
+              <span class="cart-total">
+                $375.00
+              </span>
+            </p>
+          </div>
+          <button class="delete">
+            <img src="./images/icon-delete.svg" alt="delete">
+          </button> -->
   

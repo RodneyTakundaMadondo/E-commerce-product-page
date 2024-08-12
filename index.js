@@ -21,9 +21,7 @@ hamburgerBtn.addEventListener("click",()=>{
     navlist.classList.remove("hidden");
     
 })
-closeBtn.addEventListener('click', ()=>{
-    navlist.classList.add("hidden")
-    const mediaQuery = window.matchMedia('(min-width:768px)');
+const mediaQuery = window.matchMedia('(min-width:992px)');
     mediaQuery.addEventListener("change",(e)=>{
      if(e.matches){
          navlist.classList.remove("hidden")
@@ -31,6 +29,9 @@ closeBtn.addEventListener('click', ()=>{
        return
      }
     })
+closeBtn.addEventListener('click', ()=>{
+    navlist.classList.add("hidden")
+    
 })
 
 cartBtn.addEventListener('click',()=>{
