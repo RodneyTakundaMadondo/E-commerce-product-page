@@ -6,6 +6,7 @@ let subtract = document.getElementById("subtract")
 let addCart = document.getElementById("add-cart");
 let checkoutBtn = document.getElementById("checkout");
 let nextBtn = document.querySelector(".prod")
+let altImg = document.querySelector(".alt-img");
 
 let navlist = document.querySelector(".nav-list");
 let cartContent = document.querySelector(".cart-content");
@@ -15,7 +16,16 @@ let  price = document.getElementById("price");
 let cartItem = document.querySelector(".cart-content__item");
 let cartStatus = document.getElementById("cart-status")
 let cartAmount = document.querySelector(".orange");
+let focusImg = document.querySelector(".alt-img-focus");
 
+
+// $(altImg).click(()=>{
+//     $(focusImg).toggleClass("hidden");
+//     console.log("hi")
+// })
+altImg.addEventListener("click",()=>{
+  console.log("hi");
+})
 
 hamburgerBtn.addEventListener("click",()=>{
     navlist.classList.remove("hidden");
