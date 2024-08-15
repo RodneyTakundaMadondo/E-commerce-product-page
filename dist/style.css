@@ -249,10 +249,14 @@ body {
   margin: auto;
   width: 40rem;
 }
-.alt-img-focus .close-btn {
+.alt-img-focus .close {
   display: flex;
   justify-content: flex-end;
+}
+.alt-img-focus .close__btn {
   padding: 0.5rem;
+  width: auto;
+  color: white;
 }
 .alt-img-focus .img-in-focus {
   width: 40rem;

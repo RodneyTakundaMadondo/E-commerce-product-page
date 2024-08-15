@@ -305,14 +305,16 @@ body {
     right: 0;
     margin: auto;
     width: 40rem;
-
-    .close-btn {
+    .close{
         display: flex;
         justify-content: flex-end;
-        padding: 0.5rem;
-
+        &__btn{
+            padding: 0.5rem;
+            width: auto;
+            color: white;
+        }
     }
-
+    
     .img-in-focus {
         width: 40rem;
         border-radius: 20px;
