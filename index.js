@@ -18,44 +18,53 @@ let cartStatus = document.getElementById("cart-status")
 let cartAmount = document.querySelector(".orange");
 let focusImg = document.querySelector(".alt-img-focus");
 let  productImgContainer = document.querySelector(".product-image")
-let altImg = productImgContainer.querySelectorAll(".alt-img");
+let altImgs = productImgContainer.querySelectorAll(".alt-img");
+let imgInFocus = document.querySelector(".img-in-focus");//this the image we see after clicking one of the tiny images
+let focusAltimgs = focusImg.querySelectorAll(".alt-img");
+let prev = focusImg.querySelector(".previous");
+let next = focusImg.querySelector(".next");
 
-
-// $(altImg).click(()=>{
-//     $(focusImg).toggleClass("hidden");
-//     console.log("hi")
-// })
-altImg.forEach((altImgs)=>{
-  altImgs.addEventListener("click",()=>{
+altImgs.forEach((altImg)=>{
+  altImg.addEventListener("click",()=>{
+    let img = altImg.querySelector("#alt-view").src.replace("-thumbnail","");//looking for this specific id in this container and then getting the src, then remove the part of that src that we dont want
+    imgInFocus.innerHTML = `
+        <img id="pop-img" src="${img}" alt="">
+    `
     $(focusImg).toggleClass("hidden");
    $(".overlay").toggleClass("hidden");
-
-
-   /// so what we wanna do is check the  image of the div that we clicked
-   // fetch the src of that img and use it on the big one 
   })
 })
+focusAltimgs.forEach((focusAltimg)=>{
+      focusAltimg.addEventListener("click", ()=>{
+        let img = focusAltimg.querySelector("#alt-view").src.replace("-thumbnail","");
+        imgInFocus.innerHTML = `
+        <img id="pop-img" src="${img}" alt="">
+    `
+      })
+})
+
 
 $(".close__btn").click(()=>{
   $(".overlay").addClass("hidden");
   $(focusImg).addClass("hidden")
 })
 
-hamburgerBtn.addEventListener("click",()=>{
-    navlist.classList.remove("hidden");
-    
+
+$(hamburgerBtn).click(()=>{
+  navlist.classList.remove("hidden");
 })
-const mediaQuery = window.matchMedia('(min-width:992px)');
-    mediaQuery.addEventListener("change",(e)=>{
-     if(e.matches){
-         navlist.classList.remove("hidden")
-     }else{
-       return
-     }
-    })
-closeBtn.addEventListener('click', ()=>{
+ function updateNavList(){
+  if(window.innerWidth>=768){
+    navlist.classList.remove("hidden")
+  }else{
     navlist.classList.add("hidden")
+  }
+ }
+  updateNavList();
+   window.addEventListener("resize",updateNavList)
     
+$(closeBtn).click(()=>{
+  navlist.classList.add("hidden")
 })
 
 cartBtn.addEventListener('click',()=>{
@@ -65,13 +74,43 @@ cartBtn.addEventListener('click',()=>{
 plusBtn.addEventListener('click',()=>{
     quantity.textContent++;
 })
+
 subtract.addEventListener('click',()=>{
-   if(quantity.textContent === "0"){
+// console.log(typeof Number(quantity.textContent));
+   if(Number(quantity.textContent) === 0){
     return
    }else{
     quantity.textContent --;
    }
 })
+let img = document.querySelector("#main-item");
+let imgNum = 1;
+$(".product-image__previous").click(()=>{
+  /*we can get the image and manipulate the src of it
+  when it is less than 1 go back to 4 and loop that way */
+  imgNum--;
+  if(imgNum<=0){
+    imgNum = 4;
+  }
+  manipulateImg(imgNum)
+})
+$(".product-image__next").click(()=>{
+  imgNum++;
+  if(imgNum>4){
+    imgNum = 1;
+  }
+  manipulateImg(imgNum);
+  
+})
+
+function manipulateImg(number){
+  let imgsrc = `./images/image-product-${number}.jpg`;
+  img.src = imgsrc;
+}
+// let imgfocus = document.querySelector("#pop-img")
+// $(prev).click(()=>{
+//   console.log(imgfocus);
+// })
 
 $(addCart).click(()=>{
     let cartQuantity = quantity.textContent;
