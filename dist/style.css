@@ -399,6 +399,10 @@ body {
   font-weight: 700;
   text-decoration: line-through;
 }
+.main-content__container .even-columns .product-information__quantity--amount {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
 .main-content__container .even-columns .product-information__quantity--buttons {
   display: flex;
   justify-content: space-between;
