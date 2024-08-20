@@ -23,23 +23,51 @@ let imgInFocus = document.querySelector(".img-in-focus");//this the image we see
 let focusAltimgs = focusImg.querySelectorAll(".alt-img");
 let prev = focusImg.querySelector(".previous");
 let next = focusImg.querySelector(".next");
+let mainImg = $(".main-img");
 
 
 altImgs.forEach((altImg) => {
   altImg.addEventListener("click", () => {
     let img = altImg.querySelector("#alt-view").src.replace("-thumbnail", "");//looking for this specific id in this container and then getting the src, then remove the part of that src that we dont want
-
-    $("#popup").attr("src", `${img}`)
-    $(focusImg).toggleClass("hidden");
-    $(".overlay").toggleClass("hidden");
+    $("#main-item").attr("src",`${img}`)  
   })
 })
 focusAltimgs.forEach((focusAltimg) => {
   focusAltimg.addEventListener("click", () => {
     let img = focusAltimg.querySelector("#alt-view").src.replace("-thumbnail", "");
     $("#popup").attr("src", `${img}`)
+    focusAltimgs.forEach((altImg)=>{
+      if(altImg !==focusAltimg){
+        $(altImg).removeClass("custom")
+      }
+    })
+    let popupimg =  $("#popup").attr("src");
+    let smallimg = $(focusAltimg).children("#alt-view").attr("src");
+   let removeDotIndex=  smallimg.indexOf(".")
+    let tinyimg = "http://127.0.0.1:5500"  +smallimg.slice(removeDotIndex +1,smallimg.length );
+    tinyimg = tinyimg.replace("-thumbnail", "");
+
+    if(popupimg ==tinyimg){
+      $(focusAltimg).addClass("custom")
+    }
+    
+   
   })
 })
+
+function addPopUp(){
+  $(".main-img").off("click");
+  if(window.innerWidth>=992){
+    $(".main-img").click(()=>{
+      let img = mainImg.children("#main-item").attr("src")
+        $("#popup").attr("src", `${img}`)
+      $(focusImg).toggleClass("hidden");
+      $(".overlay").toggleClass("hidden");
+    })
+  }else return;
+}
+addPopUp();
+window.addEventListener("resize",addPopUp);
 
 
 $(".close__btn").click(() => {
