@@ -178,7 +178,16 @@ $(addCart).click(() => {
       if (cartAmount.textContent > 0 && innerQuantity.textContent > 0) {
         cartAmount.textContent--;
         innerQuantity.textContent--;
-        cartTotal.textContent = `$${Number(innerQuantity.textContent) * Number(price.textContent)}`;
+        cartTotal.textContent = `$${parseFloat(innerQuantity.textContent) * parseFloat(price.textContent)}`;
+        if(innerQuantity.textContent ==0){
+         $(cartItem).html(`
+          <div id="cart-status" class="isempty ">
+              <p>Your cart is empty.</p>
+            </div>
+          `)
+          $(cartAmount).addClass("hidden")
+          $(checkoutBtn).addClass("hidden")
+        }
       }
     })
   }
