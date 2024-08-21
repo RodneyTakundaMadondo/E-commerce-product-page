@@ -25,7 +25,7 @@
       <div class="navigation__container--logo-links">
 
         <div class="navigation__logo-container">
-          <button id="hamburger-menu">
+          <button id="hamburger-menu" aria-label="Open navigation menu">
             <i class="fa-solid fa-bars fa-lg"></i>
           </button>
           <div class="logo-container">
@@ -34,7 +34,7 @@
         </div>
 
         <nav class="nav-list hidden">
-          <button id="close-btn">
+          <button id="close-btn" aria-label="close navigation menu">
             <img src="./images/icon-close.svg" alt="">
           </button>
           <ul>
@@ -52,7 +52,7 @@
       <div class="cart-account">
 
         <div class="cart-icon">
-          <button id="cart"><i class="fa-solid fa-cart-shopping fa-xl"></i></button>
+          <button id="cart" aria-label="open cart"><i class="fa-solid fa-cart-shopping fa-xl"></i></button>
           <div class="orange hidden"></div>
         </div>
 
@@ -72,7 +72,7 @@
 
 
           </div>
-          <button class="hidden" id="checkout" data-name="checkout">Checkout</button>
+          <button aria-label="checkout" class="hidden" id="checkout" data-name="checkout">Checkout</button>
         </div>
 
       </div>
@@ -87,20 +87,20 @@
   <div class="alt-img-focus hidden">
 
   <div class="close">
-    <button class="close__btn">
+    <button class="close__btn" aria-label="close-pop up">
       <i class="fa-solid fa-x fa-2xl"></i>
     </button>
   </div>
 
     <div class="img-in-focus">
-      <button class="previous">
+      <button class="previous" aria-label="go to previous image ">
         <img src="./images/icon-previous.svg" alt="">
       </button>
-      <button class="next">
+      <button class="next" aria-label="go to next image">
         <img src="./images/icon-next.svg" alt="">
       </button>
      <div>
-      <img id="popup" src="" alt="">
+      <img id="popup" src="" alt="shoes">
      </div>
     </div>
     
@@ -108,16 +108,16 @@
 
     <div class="alternate-images">
       <div class="alt-img">
-        <img id="alt-view" src="./images/image-product-1-thumbnail.jpg" alt="">
+        <img id="alt-view" src="./images/image-product-1-thumbnail.jpg" alt="alternate shoe picture">
       </div>
       <div class="alt-img">
-        <img id="alt-view" src="./images/image-product-2-thumbnail.jpg" alt="">
+        <img id="alt-view" src="./images/image-product-2-thumbnail.jpg" alt="alternate shoe picture">
       </div>
       <div class="alt-img">
-        <img id="alt-view" src="./images/image-product-3-thumbnail.jpg" alt="">
+        <img id="alt-view" src="./images/image-product-3-thumbnail.jpg" alt="alternate shoe picture">
       </div>
       <div class="alt-img">
-        <img id="alt-view" src="./images/image-product-4-thumbnail.jpg" alt="">
+        <img id="alt-view" src="./images/image-product-4-thumbnail.jpg" alt="alternate shoe picture">
       </div>
     </div>
   </div>
@@ -129,29 +129,29 @@
         <div class="even-columns">
 
           <div class="product-image">
-            <button class="product-image__previous">
+            <button class="product-image__previous" aria-label="go to previous image">
               <img src="./images/icon-previous.svg" alt="">
             </button>
-            <button class="product-image__next">
+            <button class="product-image__next" aria-label="go to next image">
               <img src="./images/icon-next.svg" alt="">
             </button>
 
             <div class="main-img">
-              <img id="main-item" src="./images/image-product-1.jpg" alt="">
+              <img id="main-item" src="./images/image-product-1.jpg" alt="shoe">
             </div>
 
             <div class="alternate-images">
               <div class="alt-img">
-                <img id="alt-view" src="./images/image-product-1-thumbnail.jpg" alt="">
+                <img id="alt-view" src="./images/image-product-1-thumbnail.jpg" alt="alternate shoe picture">
               </div>
               <div class="alt-img">
-                <img id="alt-view" src="./images/image-product-2-thumbnail.jpg" alt="">
+                <img id="alt-view" src="./images/image-product-2-thumbnail.jpg" alt="alternate shoe picture">
               </div>
               <div class="alt-img">
-                <img id="alt-view" src="./images/image-product-3-thumbnail.jpg" alt="">
+                <img id="alt-view" src="./images/image-product-3-thumbnail.jpg" alt="alternate shoe picture">
               </div>
               <div class="alt-img">
-                <img id="alt-view" src="./images/image-product-4-thumbnail.jpg" alt="">
+                <img id="alt-view" src="./images/image-product-4-thumbnail.jpg" alt="alternate shoe picture">
               </div>
             </div>
           </div>
@@ -183,17 +183,17 @@
 
             <div class="product-information__quantity">
               <div class="product-information__quantity--buttons">
-                <button id="subtract" class="product-information__quantity--subtract">
+                <button id="subtract" class="product-information__quantity--subtract" aria-label="subtract quantity">
                   <img src="./images/icon-minus.svg" alt="">
                 </button>
-                <div id="quantity" class="product-information__quantity--amount">
+                <div id="quantity" class="product-information__quantity--amount" aria-label="quantity">
                   0
                 </div>
-                <button id="add" class="product-information__quantity--addition">
+                <button id="add" class="product-information__quantity--addition" aria-label="increase quantity">
                   <img src="./images/icon-plus.svg" alt="">
                 </button>
               </div>
-              <button id="add-cart" class="product-information__quantity--add-to-cart">
+              <button id="add-cart" class="product-information__quantity--add-to-cart" aria-label="add to cart">
                 <i class="fa-solid fa-cart-shopping fa-md"></i>Add to cart
               </button>
             </div>
