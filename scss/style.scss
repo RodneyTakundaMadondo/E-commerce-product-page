@@ -594,7 +594,7 @@ body {
                 grid-template-columns: 0.8fr 1fr;
                 align-items: center;
                 position: relative;
-
+                gap: 8rem;
                 .product-image {
                     button {
                         display: none;
@@ -604,8 +604,8 @@ body {
                         margin-bottom: 1rem;
                         border-radius: 10px;
                         overflow: hidden;
-                        height: 33rem;
-                        width:33rem;
+                        height: 27rem;
+                        width:27rem;
                         img {
                             display: block;
                         }
@@ -614,7 +614,7 @@ body {
                     .alternate-images {
                         display: flex;
                         justify-content: space-between;
-                        width: 100%;
+                        width: 27rem;
 
                         .alt-img {
                             position: relative;
@@ -659,8 +659,9 @@ body {
 
                 .product-information {
                     &__heading2 {
-                        font-size: 3.5rem;
+                        font-size: 2.5rem;
                         margin-bottom: 2rem;
+                        width: 30rem;
                     }
 
                     &__pricing {
