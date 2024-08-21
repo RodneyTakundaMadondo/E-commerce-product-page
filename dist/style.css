@@ -20,7 +20,7 @@
   width: 100%;
   height: 100%;
   background-color: white;
-  opacity: 0.7;
+  opacity: 0.7 !important;
   transition: opacity 0.3s ease;
 }
 
@@ -39,8 +39,10 @@ body {
   position: relative;
 }
 
-.navigation__container {
+.navigation {
   padding-block: 2rem;
+}
+.navigation__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,7 +50,6 @@ body {
   width: min(1200px, 100% - 2rem);
   margin-inline: auto;
   position: relative;
-  margin-bottom: 2rem;
 }
 .navigation__container--logo-links {
   display: flex;
@@ -298,16 +299,18 @@ body {
   z-index: 1000;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
-  top: 6rem;
+  top: 3rem;
   left: 0;
   right: 0;
   margin: auto;
-  width: 40rem;
+  width: 100%;
 }
 .alt-img-focus .close {
   display: flex;
   justify-content: flex-end;
+  width: 32rem;
 }
 .alt-img-focus .close__btn {
   padding: 0.5rem;
@@ -315,13 +318,18 @@ body {
   color: white;
 }
 .alt-img-focus .img-in-focus {
-  width: 40rem;
+  position: relative;
+}
+.alt-img-focus .img-in-focus div {
+  width: 32rem;
+  height: 32rem;
   border-radius: 20px;
   overflow: hidden;
 }
-.alt-img-focus .img-in-focus img {
+.alt-img-focus .img-in-focus div img {
   display: block;
   max-width: 100%;
+  overflow-y: hidden;
 }
 .alt-img-focus .previous {
   left: -2rem;
@@ -370,7 +378,6 @@ body {
   margin-inline: auto;
 }
 .main-content__container .even-columns {
-  padding-block: 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -381,7 +388,7 @@ body {
 .main-content__container .even-columns .product-image .alternate-images {
   display: none;
 }
-.main-content__container .even-columns .product-image img {
+.main-content__container .even-columns .product-image .main-img img {
   display: block;
   max-width: 100%;
 }
@@ -491,7 +498,7 @@ body {
   }
   .main-content__container .even-columns {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.8fr 1fr;
     align-items: center;
     position: relative;
   }
@@ -499,9 +506,11 @@ body {
     display: none;
   }
   .main-content__container .even-columns .product-image .main-img {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     border-radius: 10px;
     overflow: hidden;
+    height: 33rem;
+    width: 33rem;
   }
   .main-content__container .even-columns .product-image .main-img img {
     display: block;

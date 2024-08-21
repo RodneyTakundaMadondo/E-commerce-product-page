@@ -19,39 +19,39 @@ let cartAmount = document.querySelector(".orange");
 let focusImg = document.querySelector(".alt-img-focus");
 let productImgContainer = document.querySelector(".product-image")
 let altImgs = productImgContainer.querySelectorAll(".alt-img");
-let imgInFocus = document.querySelector(".img-in-focus");//this the image we see after clicking one of the tiny images
-let focusAltimgs = focusImg.querySelectorAll(".alt-img");
-let prev = focusImg.querySelector(".previous");
-let next = focusImg.querySelector(".next");
-let mainImg = $(".main-img");
-
+let popUpImgContainer = document.querySelector(".img-in-focus");//this the image we see after clicking one of the tiny images
+let popUpAltImgs = focusImg.querySelectorAll(".alt-img");
+let popUpPrevBtn = focusImg.querySelector(".previous");
+let popUpNextBtn = focusImg.querySelector(".next");
+let mainImgContainer = $(".main-img");
+let mainImg = $("#main-item");
+let popUpMainImg =$("#popup");
 
 altImgs.forEach((altImg) => {
   altImg.addEventListener("click", () => {
     let img = altImg.querySelector("#alt-view").src.replace("-thumbnail", "");//looking for this specific id in this container and then getting the src, then remove the part of that src that we dont want
-    $("#main-item").attr("src",`${img}`)  
+    mainImg.attr("src",`${img}`) 
+ 
+    altImgs.forEach((button)=>{
+      if(button!== altImg){
+        button.classList.remove("custom")
+      }
+      altImg.classList.add("custom")
+    })
   })
 })
-focusAltimgs.forEach((focusAltimg) => {
-  focusAltimg.addEventListener("click", () => {
-    let img = focusAltimg.querySelector("#alt-view").src.replace("-thumbnail", "");
-    $("#popup").attr("src", `${img}`)
-    focusAltimgs.forEach((altImg)=>{
-      if(altImg !==focusAltimg){
-        $(altImg).removeClass("custom")
-      }
-    })
-    let popupimg =  $("#popup").attr("src");
-    let smallimg = $(focusAltimg).children("#alt-view").attr("src");
-   let removeDotIndex=  smallimg.indexOf(".")
-    let tinyimg = "http://127.0.0.1:5500"  +smallimg.slice(removeDotIndex +1,smallimg.length );
-    tinyimg = tinyimg.replace("-thumbnail", "");
 
-    if(popupimg ==tinyimg){
-      $(focusAltimg).addClass("custom")
-    }
-    
-   
+popUpAltImgs.forEach((popUpAltImg) => {
+  popUpAltImg.addEventListener("click", () => {
+    let img = popUpAltImg.querySelector("#alt-view").src.replace("-thumbnail", "");
+    popUpMainImg.attr("src", `${img}`)
+
+    popUpAltImgs.forEach((button)=>{
+      if(button!==popUpAltImg){
+        button.classList.remove("custom");
+      }
+      popUpAltImg.classList.add("custom")
+    })
   })
 })
 
@@ -59,7 +59,7 @@ function addPopUp(){
   $(".main-img").off("click");
   if(window.innerWidth>=992){
     $(".main-img").click(()=>{
-      let img = mainImg.children("#main-item").attr("src")
+      let img = mainImgContainer.children("#main-item").attr("src")
         $("#popup").attr("src", `${img}`)
       $(focusImg).toggleClass("hidden");
       $(".overlay").toggleClass("hidden");
@@ -133,7 +133,7 @@ function manipulateImg(number) {
   img.src = imgsrc;
 }
 let imgpop = $('#popup');
-$(prev).click(() => {
+$(popUpPrevBtn).click(() => {
 
   let initsrc = imgpop.attr("src");
 
@@ -148,10 +148,23 @@ $(prev).click(() => {
   if (imgNum <= 0) {
     imgNum = 4;
   }
-  imgpop.attr("src", `http://127.0.0.1:5500/images/image-product-${imgNum}.jpg`);
+  imgpop.attr("src", `./images/image-product-${imgNum}.jpg`);
+
+  popUpAltImgs.forEach((popUpAltImg) => {
+   
+    let img = popUpAltImg.querySelector("#alt-view");
+    img =img.getAttribute("src").replace("-thumbnail", "");
+  
+    if(imgpop.attr("src")===img){
+      console.log(true);
+      popUpAltImg.classList.add("custom")
+    }else {popUpAltImg.classList.remove("custom")}
+    
+    
+  })
 })
 
-$(next).click(() => {
+$(popUpNextBtn).click(() => {
 
   let initsrc = imgpop.attr("src");
   let dot = initsrc.lastIndexOf(".");
@@ -163,6 +176,18 @@ $(next).click(() => {
     imgNum = 1;
   }
   imgpop.attr("src", `./images/image-product-${imgNum}.jpg`);
+  popUpAltImgs.forEach((popUpAltImg) => {
+   
+    let img = popUpAltImg.querySelector("#alt-view");
+    img =img.getAttribute("src").replace("-thumbnail", "");
+  
+    if(imgpop.attr("src")===img){
+      console.log(true);
+      popUpAltImg.classList.add("custom")
+    }else {popUpAltImg.classList.remove("custom")}
+    
+    
+  })
 })
 
 
